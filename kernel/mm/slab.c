@@ -402,8 +402,7 @@ static const char *kmalloc_allocator_names[] = {
         "size-262144"
 };
 
-void *
-kmalloc(size_t size)
+void *kmalloc(size_t size)
 {
         int order;
         struct slab_allocator **cs;

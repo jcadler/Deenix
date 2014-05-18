@@ -1,4 +1,4 @@
-CC        := gcc
+CC        := gdc
 LD        := ld
 AR        := ar
 PYTHON    := python

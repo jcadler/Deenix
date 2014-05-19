@@ -61,8 +61,7 @@ static context_t bootstrap_context;
  * hardware-specific initialization, then creates a pseudo-context to
  * execute the bootstrap function in.
  */
-void
-kmain()
+void kmain()
 {
         GDB_CALL_HOOK(boot);
 

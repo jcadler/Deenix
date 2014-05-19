@@ -10,7 +10,7 @@ CFLAGS    += -D__KERNEL__
 
 HEAD      := $(wildcard include/*/*.h include/*/*/*.h)
 SRCDIR    := main boot util drivers/disk drivers/tty drivers mm proc fs/ramfs fs/s5fs fs vm api test test/kshell entry test/vfstest
-SRC       := $(foreach dr, $(SRCDIR), $(wildcard $(dr)/*.[cS]))
+SRC       := $(foreach dr, $(SRCDIR), $(wildcard $(dr)/*.[dcS]))
 OBJS      := $(addsuffix .o,$(basename $(SRC)))
 SCRIPTS   := $(foreach dr, $(SRCDIR), $(wildcard $(dr)/*.gdb $(dr)/*.py))
 
@@ -30,7 +30,8 @@ IMAGE     := weenix.img
 ISO_IMAGE := weenix.iso
 GDBCOMM   := gdb-commands
 
-.PHONY: all cscope clean
+.PHONY:
+	all cscope clean
 
 %.a:
 	touch $@
@@ -76,6 +77,10 @@ $(GDBCOMM): $(SCRIPTS)
 %.o: %.S
 	@ echo "  Compiling \"kernel/$<\"..."
 	@ $(CC) -c $(ASFLAGS) $(CFLAGS) $< -o $@
+
+%.o: %.d
+	@ echo "  Compiling \"kernel/$<\"..."
+	@ $(DC) $< -c -o $@ $(DFLAGS)
 
 cscope: $(HEAD) $(SRC)
 	@ echo "  Updating cscope symbol cross-reference..."

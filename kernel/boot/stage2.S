@@ -4,6 +4,7 @@
 		.code16
 
 .global stage2_start
+.extern main
 stage2_start:
 _start:
 		jmp start

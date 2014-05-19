@@ -1,4 +1,4 @@
-cscope 15 $HOME/Programming/D/Deenix               0000767058
+cscope 15 $HOME/Programming/D/Deenix               0000766914
 	@/home/john/Programming/D/Deenix/kernel/api/access.c
 
 1 
@@ -14290,28 +14290,6 @@ vt_curs‹
 ;
 
 461 
-	}
-}
-
-	@/home/john/Programming/D/Deenix/kernel/entry/entry.c
-
-2 
-	~"maö/íåy.h
-"
-
-6 
-	$íåy
-()
-
-8 
-	`kmaö
-();
-
-9 
-	`__asm__
-("cli\n\t"
-
-11 
 	}
 }
 
@@ -41551,7 +41529,7 @@ KMALLOC_SIZE_MIN_ORDER
 	gkmÆloc_Æloˇt‹_«mes
 [] = {
 
-406 
+405 *
 	$kmÆloc
 (
 size_t
@@ -41559,33 +41537,33 @@ size_t
 size
 )
 
-408 
+407 
 ‹dî
 ;
 
-409 
+408 
 ¶ab_Æloˇt‹
  **
 cs
 ;
 
-410 *
+409 *
 addr
 ;
 
-412 
+411 
 size
  +(
 ¶ab_Æloˇt‹
  *);
 
-418 
+417 
 cs
  = 
 kmÆloc_Æloˇt‹s
 ;
 
-419 
+418 
 ‹dî
  = 
 KMALLOC_SIZE_MIN_ORDER
@@ -41593,7 +41571,7 @@ KMALLOC_SIZE_MIN_ORDER
 KMALLOC_SIZE_MAX_ORDER
 ; ordî++, 
 cs
-++) {
+++)
 
 420 i‡((
 size_t
@@ -41601,9 +41579,9 @@ size_t
 ‹dî
 Ë>
 size
-) {
+)
 
-421 
+422 
 addr
  = 
 	`¶ab_obj_Æloc
@@ -41611,25 +41589,25 @@ addr
 cs
 );
 
-422 i‡(!
+423 i‡(!
 addr
-) {
+)
 
-423 
+425 
 	`dbg
 (
 DBG_MM
 , "WARNING: kmalloc out of memory\n");
 
-424  
+426  
 NULL
 ;
 
-426 #ifde‡
+428 #ifde‡
 MM_POISON
 
 
-427 
+429 
 	`mem£t
 (
 addr
@@ -41639,7 +41617,7 @@ MM_POISON_ALLOC
 size
 );
 
-429 *((
+431 *((
 ¶ab_Æloˇt‹
  **)
 addr
@@ -41647,33 +41625,33 @@ addr
 cs
 ;
 
-430  (*)(((
+432  (*)(((
 ¶ab_Æloˇt‹
  **)
 addr
 ) + 1);
 
-434 
+436 
 	`∑nic
 ("sizêbiggîÅh™ max‹dî %ld\n", (Ë
 size
 );
 
-435  
+437  
 NULL
 ;
 
-436 
+438 
 	}
 }
 
-438 
+440 
 __©åibuã__
 ((
 u£d
 )) *
 
-439 
+441 
 	$mÆloc
 (
 size_t
@@ -41681,29 +41659,29 @@ size_t
 size
 )
 
-444  
+446  
 	`kmÆloc
 (
 size
 );
 
-445 
+447 
 	}
 }
 
-448 
+450 
 	$k‰ì
 (*
 addr
 )
 
-450 
+452 
 addr
  = (*)(((
 ¶ab_Æloˇt‹
  **)addr) - 1);
 
-451 
+453 
 ¶ab_Æloˇt‹
  *
 ß
@@ -41711,11 +41689,11 @@ addr
 addr
 ;
 
-453 #ifde‡
+455 #ifde‡
 MM_POISON
 
 
-458 
+460 
 objsize
  = 
 ß
@@ -41723,17 +41701,17 @@ objsize
 ß_objsize
 ;
 
-459 #ifde‡
+461 #ifde‡
 SLAB_REDZONE
 
 
-460 
+462 
 objsize
  -(
 SLAB_REDZONE
 ) * 2;
 
-462 
+464 
 	`mem£t
 (
 addr
@@ -41743,7 +41721,7 @@ MM_POISON_FREE
 objsize
 );
 
-465 
+467 
 	`¶ab_obj_‰ì
 (
 ß
@@ -41751,47 +41729,47 @@ objsize
 addr
 );
 
-466 
+468 
 	}
 }
 
-468 
+470 
 __©åibuã__
 ((
 u£d
 )) 
 
-469 
+471 
 	$‰ì
 (*
 addr
 )
 
-473 
+475 
 	`k‰ì
 (
 addr
 );
 
-474 
+476 
 	}
 }
 
-477 
+479 
 	$¶ab_öô
 ()
 
-479 
+481 
 ‹dî
 ;
 
-480 
+482 
 ¶ab_Æloˇt‹
  **
 cs
 ;
 
-483 
+485 
 	`_Æloˇt‹_öô
 (&
 ¶ab_Æloˇt‹_Æloˇt‹
@@ -41799,13 +41777,13 @@ cs
 ¶ab_Æloˇt‹
 ));
 
-489 
+491 
 cs
  = 
 kmÆloc_Æloˇt‹s
 ;
 
-490 
+492 
 ‹dî
  = 
 KMALLOC_SIZE_MIN_ORDER
@@ -41815,7 +41793,7 @@ KMALLOC_SIZE_MAX_ORDER
 cs
 ++) {
 
-491 i‡(
+493 i‡(
 NULL
  =(*
 cs
@@ -41829,11 +41807,11 @@ kmÆloc_Æloˇt‹_«mes
 KMALLOC_SIZE_MIN_ORDER
 ], (1 << order)))) {
 
-492 
+494 
 	`∑nic
 ("Couldn't create kmallocállocators!\n");
 
-495 
+497 
 	}
 }
 
@@ -135832,8 +135810,8 @@ __END_DECLS
 .
 1
 /usr/include
-154
-5856
+153
+5803
 /home/john/Programming/D/Deenix/kernel/api/access.c
 /home/john/Programming/D/Deenix/kernel/api/binfmt.c
 /home/john/Programming/D/Deenix/kernel/api/elf32.c
@@ -135850,7 +135828,6 @@ __END_DECLS
 /home/john/Programming/D/Deenix/kernel/drivers/tty/screen.c
 /home/john/Programming/D/Deenix/kernel/drivers/tty/tty.c
 /home/john/Programming/D/Deenix/kernel/drivers/tty/virtterm.c
-/home/john/Programming/D/Deenix/kernel/entry/entry.c
 /home/john/Programming/D/Deenix/kernel/fs/file.c
 /home/john/Programming/D/Deenix/kernel/fs/namev.c
 /home/john/Programming/D/Deenix/kernel/fs/open.c

@@ -415,20 +415,23 @@ void *kmalloc(size_t size)
          * requested size, and allocate from it.
          */
         cs = kmalloc_allocators;
-        for (order = KMALLOC_SIZE_MIN_ORDER; order <= KMALLOC_SIZE_MAX_ORDER; order++, cs++) {
-                if ((size_t)(1 << order) >= size) {
-                        addr = slab_obj_alloc(*cs);
-                        if (!addr) {
-                                dbg(DBG_MM, "WARNING: kmalloc out of memory\n");
-                                return NULL;
-                        }
+        for (order = KMALLOC_SIZE_MIN_ORDER; order <= KMALLOC_SIZE_MAX_ORDER; order++, cs++)
+	  {
+	    if ((size_t)(1 << order) >= size)
+	      {
+		addr = slab_obj_alloc(*cs);
+		if (!addr)
+		  {
+		    dbg(DBG_MM, "WARNING: kmalloc out of memory\n");
+		    return NULL;
+		  }
 #ifdef MM_POISON
-                        memset(addr, MM_POISON_ALLOC, size);
+		memset(addr, MM_POISON_ALLOC, size);
 #endif /* MM_POISON */
-                        *((struct slab_allocator **)addr) = *cs;
-                        return (void *)(((struct slab_allocator **)addr) + 1);
-                }
-        }
+		*((struct slab_allocator **)addr) = *cs;
+		return (void *)(((struct slab_allocator **)addr) + 1);
+	      }
+	  }
 
         panic("size bigger than maxorder %ld\n", (unsigned long) size);
         return NULL;
